@@ -28,7 +28,7 @@ jobs:
           cmake --build build
 
       - name: Create tarball
-        run: tar czvf build.tar.gz -C build awirt
+        run: tar czvf build.tar.gz -C build awrit/Release/awrit.app/Contents/MacOS/awrit
 
       - name: Create GitHub Release
         id: create_release
@@ -47,6 +47,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./build.tar.gz
-          asset_name: build.tar.gz
+          asset_path: ./awirt.tar.gz
+          asset_name: awrit.tar.gz
           asset_content_type: application/gzip
