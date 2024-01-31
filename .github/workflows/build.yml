@@ -28,7 +28,7 @@ jobs:
           cmake --build build
 
       - name: Create tarball
-        run: tar czvf awirt.tar.gz -C build awrit/Release/awrit.app/Contents/MacOS/awrit
+        run: tar czvf awirt.tar.gz -C build awrit/Release
 
       - name: Create GitHub Release
         id: create_release
