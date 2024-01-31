@@ -19,9 +19,10 @@ jobs:
             cmakeVersion: 3.25.2
             ninjaVersion: 1.11.1
 
+      # https://github.com/actions/runner-images/blob/main/images/macos/macos-14-arm64-Readme.md
       - name: Build project
         run: |
-          export DEVELOPER_DIR=/Applications/Xcode14.3.1.app/Contents/Developer
+          export DEVELOPER_DIR=/Applications/Xcode_14.3.1.app/Contents/Developer
           sudo xcode-select -s $DEVELOPER_DIR
           cmake -G "Ninja" -DCMAKE_BUILD_TYPE=Release -S . -B build
           cmake --build build
